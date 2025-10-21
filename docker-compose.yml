@@ -24,10 +24,11 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
     volumes:
-      - grafana-data:/var/lib/grafana
-      - ./grafana/provisioning:/etc/grafana/provisioning
-      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - grafana-data:/var/lib/grafana                  # persistent Grafana storage
+      - ./grafana/provisioning:/etc/grafana/provisioning  # datasources + dashboard provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards # dashboard JSON files
     depends_on:
       - prometheus
 
