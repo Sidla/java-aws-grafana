@@ -11,7 +11,7 @@ public class DemoApplication {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello from monitored Java app! Telepcak je boss!";
+        return "Hello from monitored Java app! Telepcak je boss! Ahoj!";
     }
 
     public static void main(String[] args) {
